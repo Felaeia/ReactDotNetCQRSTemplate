@@ -19,6 +19,7 @@ frontend/
     api.ts
     App.tsx
     components/
+      ui/                             # Low-level design-system primitives
       common/                         # Shared, domain-neutral UI
       global/                         # Application shell and global UI
       feature/
@@ -45,8 +46,10 @@ backend/
 ```
 
 Feature-specific code belongs under `components/feature/<FeatureName>`.
-`common` is for reusable, domain-neutral components; `global` is for app-wide
-shell components such as navigation and global status UI.
+`ui` is for low-level design primitives such as buttons, inputs, and dialogs.
+`common` is for higher-level reusable components composed from those
+primitives; `global` is for app-wide shell components such as navigation and
+global status UI.
 
 The ToDo frontend files are a scaffold and are **not wired into the current
 screen**. They expect a future `GET /api/todos` and `POST /api/todos` API. The
